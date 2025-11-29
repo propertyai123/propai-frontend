@@ -400,6 +400,8 @@
         scoreEl.style.transition = "transform 0.2s ease-out";
 
         const payload = {
+              lat: parcel.lat,   // NEW
+              lng: parcel.lng,   // NEW
           price_anomaly: 0.7, replacement_delta: 0.6, historical_delta: 0.6,
           dom_score: 0.5, distance_score: 0.8, capex_score: 0.8,
           jobs_score: 0.7, sector_rel: 1, cluster: 0.6, media_tone: 0.5,
