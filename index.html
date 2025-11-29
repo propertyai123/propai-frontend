@@ -13,12 +13,12 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      background: #05060a;
-      color: #f4f4f5;
+      background: #f5f7fb;
+      color: #111827;
       height: 100vh;
       display: flex;
     }
@@ -32,15 +32,17 @@
       flex: 2;
       height: 100vh;
       min-height: 100%;
+      background: #e6eef5;
     }
 
     .sidebar {
       flex: 1;
-      border-left: 1px solid #27272a;
-      background: radial-gradient(circle at top left, #111827 0, #020617 55%);
+      border-left: 1px solid #d0d7e2;
+      background: #ffffff;
       padding: 18px 20px;
       display: flex;
       flex-direction: column;
+      box-shadow: -12px 0 24px rgba(15, 23, 42, 0.06);
     }
 
     .logo {
@@ -48,18 +50,19 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #fbbf24;
+      color: #003a70; /* McKinsey navy */
     }
 
     .subtitle {
       font-size: 12px;
-      color: #a1a1aa;
+      color: #4b5563;
+      margin-top: 4px;
     }
 
     .pill-row {
       display: flex;
       gap: 6px;
-      margin-top: 4px;
+      margin-top: 8px;
       flex-wrap: wrap;
     }
 
@@ -67,61 +70,116 @@
       font-size: 10px;
       padding: 4px 8px;
       border-radius: 999px;
-      border: 1px solid #27272a;
+      border: 1px solid #d0d7e2;
+      background: #f5f7fb;
+      color: #374151;
     }
 
-    .pill.gold { border-color: #fbbf24; color: #fbbf24; }
-    .pill.silver { border-color: #e5e7eb; color: #e5e7eb; }
-    .pill.bronze { border-color: #f97316; color: #f97316; }
+    .pill.gold {
+      border-color: #003a70;
+      color: #003a70;
+      background: #e6eef5;
+    }
+    .pill.silver {
+      border-color: #64748b;
+      color: #475569;
+      background: #f3f4f6;
+    }
+    .pill.bronze {
+      border-color: #0ea5e9;
+      color: #0369a1;
+      background: #e0f2fe;
+    }
 
     .section-title {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #71717a;
-      margin-top: 14px;
+      letter-spacing: 0.15em;
+      color: #6b7280;
+      margin-top: 18px;
     }
 
     .card {
       border-radius: 14px;
-      border: 1px solid #27272a;
-      background: linear-gradient(135deg, #020617 0, #0b1120 100%);
+      border: 1px solid #d1d5db;
+      background: #ffffff;
       padding: 12px 14px;
       margin-top: 6px;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.04);
     }
 
-    .card-label { font-size: 11px; color: #a1a1aa; }
+    .card-label {
+      font-size: 11px;
+      color: #6b7280;
+    }
 
     .card-main {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       margin-top: 6px;
+      gap: 8px;
     }
 
-    .score { font-size: 26px; font-weight: 700; }
-    .tier { font-size: 13px; padding: 3px 10px; border-radius: 999px; border: 1px solid #27272a; }
+    .score {
+      font-size: 28px;
+      font-weight: 700;
+      color: #003a70;
+    }
 
-    .tier-gold { color: #fbbf24; border-color: #fbbf24; }
-    .tier-silver { color: #e5e7eb; border-color: #e5e7eb; }
-    .tier-bronze { color: #f97316; border-color: #f97316; }
+    .tier {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      color: #374151;
+      white-space: nowrap;
+    }
+
+    .tier-gold {
+      color: #003a70;
+      border-color: #003a70;
+      background: #e6eef5;
+    }
+    .tier-silver {
+      color: #4b5563;
+      border-color: #9ca3af;
+      background: #f3f4f6;
+    }
+    .tier-bronze {
+      color: #0369a1;
+      border-color: #0ea5e9;
+      background: #e0f2fe;
+    }
 
     .factors {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      gap: 8px 10px;
       margin-top: 12px;
     }
 
-    .factor-label { font-size: 11px; color: #a1a1aa; }
-    .factor-bar-track { background: #18181b; height: 4px; width: 100%; border-radius: 999px; }
+    .factor-label {
+      font-size: 11px;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .factor-bar-track {
+      background: #e5e7eb;
+      height: 4px;
+      width: 100%;
+      border-radius: 999px;
+      overflow: hidden;
+    }
 
     .factor-bar-fill {
       height: 100%;
       border-radius: 999px;
-      background: linear-gradient(90deg, #22c55e, #fbbf24);
+      background: linear-gradient(90deg, #0ea5e9, #003a70);
       width: 0%;
-      transition: width 0.3s ease-out;
+      transition: width 0.4s ease-out;
     }
 
     .list {
@@ -130,16 +188,56 @@
       overflow-y: auto;
     }
 
-    .list-item { padding: 8px 0; border-bottom: 1px solid #18181b; cursor: pointer; }
-    .list-item-title { font-size: 13px; font-weight: 600; }
-    .list-item-meta { font-size: 11px; color: #a1a1aa; }
+    .list-item {
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+      cursor: pointer;
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    .list-item-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .list-item-meta {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .list-item:hover .list-item-title {
+      color: #003a70;
+    }
 
     .footer {
       margin-top: auto;
       font-size: 10px;
-      color: #52525b;
-      border-top: 1px solid #18181b;
+      color: #9ca3af;
+      border-top: 1px solid #e5e7eb;
       padding-top: 10px;
+    }
+
+    /* subtle scrollbars */
+    .list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .list::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+
+    /* marker scaling on hover (CSS class we can reuse later if needed) */
+    .parcel-marker {
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .parcel-marker:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.7);
     }
   </style>
 </head>
@@ -151,7 +249,7 @@
     <aside class="sidebar">
       <div>
         <div class="logo">PropAI</div>
-        <div class="subtitle">Real-time opportunity map – Midwest industrial thesis</div>
+        <div class="subtitle">Midwest industrial opportunity map</div>
         <div class="pill-row">
           <div class="pill gold">Gold ≥ 75</div>
           <div class="pill silver">Silver 50–74</div>
@@ -161,19 +259,49 @@
 
       <div class="section-title">Selected Parcel</div>
       <div class="card">
-        <div class="card-label" id="selected-address">Tap a parcel</div>
+        <div class="card-label" id="selected-address">Tap a parcel on the map or list</div>
         <div class="card-main">
           <span class="score" id="poi-score">–</span>
           <span class="tier" id="poi-tier">No score</span>
         </div>
 
         <div class="factors">
-          <div><div class="factor-label">Value Anomaly</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-value"></div></div></div>
-          <div><div class="factor-label">Catalyst</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-catalyst"></div></div></div>
-          <div><div class="factor-label">Asset</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-asset"></div></div></div>
-          <div><div class="factor-label">Market</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-market"></div></div></div>
-          <div><div class="factor-label">Incentives</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-incentive"></div></div></div>
-          <div><div class="factor-label">Risk</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-risk"></div></div></div>
+          <div>
+            <div class="factor-label">Value Anomaly</div>
+            <div class="factor-bar-track">
+              <div class="factor-bar-fill" id="bar-value"></div>
+            </div>
+          </div>
+          <div>
+            <div class="factor-label">Catalyst</div>
+            <div class="factor-bar-track">
+              <div class="factor-bar-fill" id="bar-catalyst"></div>
+            </div>
+          </div>
+          <div>
+            <div class="factor-label">Asset</div>
+            <div class="factor-bar-track">
+              <div class="factor-bar-fill" id="bar-asset"></div>
+            </div>
+          </div>
+          <div>
+            <div class="factor-label">Market</div>
+            <div class="factor-bar-track">
+              <div class="factor-bar-fill" id="bar-market"></div>
+            </div>
+          </div>
+          <div>
+            <div class="factor-label">Incentives</div>
+            <div class="factor-bar-track">
+              <div class="factor-bar-fill" id="bar-incentive"></div>
+            </div>
+          </div>
+          <div>
+            <div class="factor-label">Risk</div>
+            <div class="factor-bar-track">
+              <div class="factor-bar-fill" id="bar-risk"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -199,13 +327,12 @@
       const BACKEND_URL = "https://propai-mvp-production.up.railway.app";
 
       mapboxgl.accessToken = MAPBOX_TOKEN;
-
-      // ➤ Tell Mapbox where the worker is (self-hosted)
+      // self-hosted worker
       mapboxgl.workerUrl = "/lib/mapbox-gl-worker.js";
 
       const map = new mapboxgl.Map({
         container: "map",
-        style: "mapbox://styles/mapbox/dark-v11",
+        style: "mapbox://styles/mapbox/light-v11",
         center: [-86, 40.5],
         zoom: 4.1
       });
@@ -224,76 +351,55 @@
         { id: "ks1", name: "5 ac – De Soto, KS", address: "W 95th St, KS", lat: 38.965, lng: -94.965, state: "KS", acres: 5, price: 900000, template: "ev-goldish" }
       ];
 
-      map.on("load", () => {
-        // draw catalyst circles
-        catalysts.forEach(c => {
-          const radiusMeters = c.radius_miles * 1609.34;
-          map.addSource(`src-${c.id}`, {
-            type: "geojson",
-            data: createCircle(c.lng, c.lat, radiusMeters, 64)
-          });
-          map.addLayer({
-            id: `circle-${c.id}`,
-            type: "fill",
-            source: `src-${c.id}`,
-            paint: { "fill-color": "#22c55e", "fill-opacity": 0.08 }
-          });
-        });
-
-        // parcel markers
-        parcels.forEach(parcel => {
-          const el = document.createElement("div");
-          el.style.width = "12px";
-          el.style.height = "12px";
-          el.style.borderRadius = "999px";
-          el.style.background = "#f97316";
-          el.style.boxShadow = "0 0 6px rgba(248,113,113,0.8)";
-          el.style.cursor = "pointer";
-
-          new mapboxgl.Marker(el)
-            .setLngLat([parcel.lng, parcel.lat])
-            .addTo(map)
-            .getElement()
-            .addEventListener("click", () => handleParcel(parcel));
-        });
-
-        renderParcelList();
-      });
-
-      function renderParcelList() {
-        const list = document.getElementById("parcel-list");
-        list.innerHTML = "";
-        parcels.forEach(p => {
-          const div = document.createElement("div");
-          div.className = "list-item";
-          div.innerHTML = `
-            <div class="list-item-title">${p.name}</div>
-            <div class="list-item-meta">${p.state} • ${p.acres} ac • $${(p.price/1e6).toFixed(2)}M</div>
-          `;
-          div.addEventListener("click", () => handleParcel(p));
-          list.appendChild(div);
-        });
-      }
-
+      // ------- HELPERS -------
       function createCircle(lng, lat, radiusMeters, points) {
         const coords = [];
         const dX = radiusMeters / (111320 * Math.cos((lat * Math.PI) / 180));
         const dY = radiusMeters / 110540;
 
-        for (let i=0; i<points; i++){
-          const theta = (i/points) * 2 * Math.PI;
+        for (let i = 0; i < points; i++) {
+          const theta = (i / points) * 2 * Math.PI;
           coords.push([lng + dX * Math.cos(theta), lat + dY * Math.sin(theta)]);
         }
         coords.push(coords[0]);
-        return { type:"Feature", geometry:{ type:"Polygon", coordinates:[coords] }};
+        return { type: "Feature", geometry: { type: "Polygon", coordinates: [coords] } };
+      }
+
+      function animateBar(id, value) {
+        const bar = document.getElementById(id);
+        if (!bar) return;
+        bar.style.transition = "none";
+        bar.style.width = "0%";
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            bar.style.transition = "width 0.4s ease-out";
+            bar.style.width = Math.round(value * 100) + "%";
+          });
+        });
+      }
+
+      function updateTier(tierStr) {
+        const tierEl = document.getElementById("poi-tier");
+        const t = (tierStr || "").toLowerCase();
+        tierEl.className = "tier";
+        if (t === "gold") tierEl.classList.add("tier-gold");
+        if (t === "silver") tierEl.classList.add("tier-silver");
+        if (t === "bronze") tierEl.classList.add("tier-bronze");
+        tierEl.textContent = tierStr || "No tier";
       }
 
       async function handleParcel(parcel) {
+        // update address immediately
         document.getElementById("selected-address").textContent = parcel.address;
-        document.getElementById("poi-score").textContent = "…";
-        document.getElementById("poi-tier").textContent = "Scoring…";
+        const scoreEl = document.getElementById("poi-score");
+        scoreEl.textContent = "…";
+        updateTier("Scoring…");
 
-        const payload = { 
+        // score pop animation placeholder
+        scoreEl.style.transform = "scale(1)";
+        scoreEl.style.transition = "transform 0.2s ease-out";
+
+        const payload = {
           price_anomaly: 0.7, replacement_delta: 0.6, historical_delta: 0.6,
           dom_score: 0.5, distance_score: 0.8, capex_score: 0.8,
           jobs_score: 0.7, sector_rel: 1, cluster: 0.6, media_tone: 0.5,
@@ -306,25 +412,141 @@
 
         try {
           const res = await fetch(BACKEND_URL + "/score", {
-            method:"POST",
-            headers:{ "Content-Type":"application/json" },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
           });
           const data = await res.json();
 
-          document.getElementById("poi-score").textContent = data.poi;
-          const tier = data.tier.toLowerCase();
-          const tierEl = document.getElementById("poi-tier");
+          // score pop
+          scoreEl.textContent = data.poi;
+          scoreEl.style.transform = "scale(1.2)";
+          setTimeout(() => {
+            scoreEl.style.transform = "scale(1)";
+          }, 150);
 
-          tierEl.textContent = data.tier;
-          tierEl.className = "tier tier-" + tier;
+          updateTier(data.tier);
 
+          animateBar("bar-value", data.value_anomaly ?? 0);
+          animateBar("bar-catalyst", data.catalyst_adj ?? 0);
+          animateBar("bar-asset", data.asset_upside ?? 0);
+          animateBar("bar-market", data.market_momentum ?? 0);
+          animateBar("bar-incentive", data.incentive_score ?? 0);
+          animateBar("bar-risk", data.risk_penalty ?? 0);
         } catch (err) {
           console.error(err);
-          document.getElementById("poi-score").textContent = "–";
-          document.getElementById("poi-tier").textContent = "Error";
+          scoreEl.textContent = "–";
+          updateTier("Error");
         }
       }
+
+      function renderParcelList() {
+        const list = document.getElementById("parcel-list");
+        list.innerHTML = "";
+        parcels.forEach(p => {
+          const div = document.createElement("div");
+          div.className = "list-item";
+          div.innerHTML = `
+            <div class="list-item-title">${p.name}</div>
+            <div class="list-item-meta">${p.state} • ${p.acres} ac • $${(p.price / 1e6).toFixed(2)}M</div>
+          `;
+          div.addEventListener("click", () => {
+            map.flyTo({
+              center: [p.lng, p.lat],
+              zoom: 13,
+              speed: 0.8,
+              curve: 1.4
+            });
+            if (map.getSource("selected-parcel")) {
+              map.getSource("selected-parcel").setData({
+                type: "Feature",
+                geometry: { type: "Point", coordinates: [p.lng, p.lat] }
+              });
+            }
+            handleParcel(p);
+          });
+          list.appendChild(div);
+        });
+      }
+
+      // ------- MAP LOAD -------
+      map.on("load", () => {
+        // highlight source/layer for selected parcel
+        map.addSource("selected-parcel", {
+          type: "geojson",
+          data: {
+            type: "Feature",
+            geometry: { type: "Point", coordinates: [0, 0] }
+          }
+        });
+
+        map.addLayer({
+          id: "selected-parcel-ring",
+          type: "circle",
+          source: "selected-parcel",
+          paint: {
+            "circle-radius": 18,
+            "circle-color": "#bfdbfe",
+            "circle-opacity": 0.5,
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#1d4ed8"
+          }
+        });
+
+        // catalyst circles
+        catalysts.forEach(c => {
+          const radiusMeters = c.radius_miles * 1609.34;
+          map.addSource(`src-${c.id}`, {
+            type: "geojson",
+            data: createCircle(c.lng, c.lat, radiusMeters, 64)
+          });
+          map.addLayer({
+            id: `circle-${c.id}`,
+            type: "fill",
+            source: `src-${c.id}`,
+            paint: {
+              "fill-color": "#bfdbfe",
+              "fill-opacity": 0.18
+            }
+          });
+        });
+
+        // parcel markers
+        parcels.forEach(parcel => {
+          const el = document.createElement("div");
+          el.className = "parcel-marker";
+          el.style.width = "12px";
+          el.style.height = "12px";
+          el.style.borderRadius = "999px";
+          el.style.background = "#0ea5e9";
+          el.style.boxShadow = "0 0 6px rgba(37,99,235,0.8)";
+          el.style.cursor = "pointer";
+
+          new mapboxgl.Marker(el)
+            .setLngLat([parcel.lng, parcel.lat])
+            .addTo(map)
+            .getElement()
+            .addEventListener("click", () => {
+              map.flyTo({
+                center: [parcel.lng, parcel.lat],
+                zoom: 13,
+                speed: 0.8,
+                curve: 1.4
+              });
+
+              if (map.getSource("selected-parcel")) {
+                map.getSource("selected-parcel").setData({
+                  type: "Feature",
+                  geometry: { type: "Point", coordinates: [parcel.lng, parcel.lat] }
+                });
+              }
+
+              handleParcel(parcel);
+            });
+        });
+
+        renderParcelList();
+      });
     });
   </script>
 </body>
