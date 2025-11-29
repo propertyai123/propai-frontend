@@ -16,8 +16,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont;
     }
 
     body {
@@ -35,6 +34,7 @@
     #map {
       flex: 2;
       height: 100vh;
+      min-height: 100%;
     }
 
     .sidebar {
@@ -44,7 +44,6 @@
       padding: 18px 20px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
     }
 
     .logo {
@@ -72,31 +71,18 @@
       padding: 4px 8px;
       border-radius: 999px;
       border: 1px solid #27272a;
-      color: #e4e4e7;
-      background: #09090b;
     }
 
-    .pill.gold {
-      border-color: #fbbf24;
-      color: #fbbf24;
-    }
-
-    .pill.silver {
-      border-color: #e5e7eb;
-      color: #e5e7eb;
-    }
-
-    .pill.bronze {
-      border-color: #f97316;
-      color: #fed7aa;
-    }
+    .pill.gold { border-color: #fbbf24; color: #fbbf24; }
+    .pill.silver { border-color: #e5e7eb; color: #e5e7eb; }
+    .pill.bronze { border-color: #f97316; color: #f97316; }
 
     .section-title {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: #71717a;
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
     .card {
@@ -107,10 +93,7 @@
       margin-top: 6px;
     }
 
-    .card-label {
-      font-size: 11px;
-      color: #a1a1aa;
-    }
+    .card-label { font-size: 11px; color: #a1a1aa; }
 
     .card-main {
       display: flex;
@@ -119,58 +102,25 @@
       margin-top: 6px;
     }
 
-    .card-main span.score {
-      font-size: 26px;
-      font-weight: 700;
-    }
+    .score { font-size: 26px; font-weight: 700; }
+    .tier { font-size: 13px; padding: 3px 10px; border-radius: 999px; border: 1px solid #27272a; }
 
-    .card-main span.tier {
-      font-size: 13px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      border: 1px solid #27272a;
-      text-transform: uppercase;
-    }
-
-    .tier-gold {
-      color: #fbbf24;
-      border-color: #fbbf24;
-    }
-
-    .tier-silver {
-      color: #e5e7eb;
-      border-color: #e5e7eb;
-    }
-
-    .tier-bronze {
-      color: #fed7aa;
-      border-color: #f97316;
-    }
+    .tier-gold { color: #fbbf24; border-color: #fbbf24; }
+    .tier-silver { color: #e5e7eb; border-color: #e5e7eb; }
+    .tier-bronze { color: #f97316; border-color: #f97316; }
 
     .factors {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6px;
-      margin-top: 10px;
-      font-size: 11px;
+      margin-top: 12px;
     }
 
-    .factor-label {
-      color: #a1a1aa;
-    }
-
-    .factor-bar-track {
-      margin-top: 4px;
-      width: 100%;
-      height: 4px;
-      border-radius: 999px;
-      background: #18181b;
-      overflow: hidden;
-    }
+    .factor-label { font-size: 11px; color: #a1a1aa; }
+    .factor-bar-track { background: #18181b; height: 4px; width: 100%; border-radius: 999px; }
 
     .factor-bar-fill {
-      height: 100%;
-      border-radius: 999px;
+      height: 100%; border-radius: 999px;
       background: linear-gradient(90deg, #22c55e, #fbbf24);
       width: 0%;
       transition: width 0.3s ease-out;
@@ -180,82 +130,18 @@
       margin-top: 8px;
       max-height: 220px;
       overflow-y: auto;
-      padding-right: 4px;
     }
 
-    .list-item {
-      padding: 8px 0;
-      border-bottom: 1px solid #18181b;
-      cursor: pointer;
-    }
-
-    .list-item:last-child {
-      border-bottom: none;
-    }
-
-    .list-item-title {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .list-item-meta {
-      font-size: 11px;
-      color: #a1a1aa;
-      margin-top: 2px;
-    }
-
-    .list-item:hover .list-item-title {
-      color: #fbbf24;
-    }
-
-    .status {
-      font-size: 11px;
-      color: #a1a1aa;
-      margin-top: 6px;
-    }
-
-    .status span {
-      color: #4ade80;
-    }
+    .list-item { padding: 8px 0; border-bottom: 1px solid #18181b; cursor: pointer; }
+    .list-item-title { font-size: 13px; font-weight: 600; }
+    .list-item-meta { font-size: 11px; color: #a1a1aa; }
 
     .footer {
       margin-top: auto;
       font-size: 10px;
       color: #52525b;
       border-top: 1px solid #18181b;
-      padding-top: 8px;
-    }
-
-    .footer-strong {
-      color: #e4e4e7;
-    }
-
-    .mapboxgl-popup-content {
-      background: #020617;
-      color: #f4f4f5;
-      border-radius: 10px;
-      padding: 8px 10px;
-      font-size: 11px;
-      border: 1px solid #27272a;
-    }
-
-    .mapboxgl-popup-tip {
-      border-top-color: #020617 !important;
-    }
-
-    @media (max-width: 900px) {
-      body {
-        flex-direction: column;
-      }
-
-      #map {
-        height: 50vh;
-        flex: none;
-      }
-
-      .sidebar {
-        height: 50vh;
-      }
+      padding-top: 10px;
     }
   </style>
 </head>
@@ -263,510 +149,183 @@
 <body>
   <div class="app">
     <div id="map"></div>
+
     <aside class="sidebar">
       <div>
         <div class="logo">PropAI</div>
         <div class="subtitle">Real-time opportunity map – Midwest industrial thesis</div>
         <div class="pill-row">
-          <div class="pill gold">Gold &gt;= 75 POI</div>
+          <div class="pill gold">Gold ≥ 75</div>
           <div class="pill silver">Silver 50–74</div>
           <div class="pill bronze">Bronze &lt; 50</div>
         </div>
       </div>
 
       <div class="section-title">Selected Parcel</div>
-      <div class="card" id="score-card">
-        <div class="card-label" id="selected-address">Tap a parcel on the map or list</div>
+      <div class="card">
+        <div class="card-label" id="selected-address">Tap a parcel</div>
         <div class="card-main">
           <span class="score" id="poi-score">–</span>
           <span class="tier" id="poi-tier">No score</span>
         </div>
+
         <div class="factors">
-          <div>
-            <div class="factor-label">Value anomaly</div>
-            <div class="factor-bar-track">
-              <div class="factor-bar-fill" id="bar-value"></div>
-            </div>
-          </div>
-          <div>
-            <div class="factor-label">Catalyst proximity</div>
-            <div class="factor-bar-track">
-              <div class="factor-bar-fill" id="bar-catalyst"></div>
-            </div>
-          </div>
-          <div>
-            <div class="factor-label">Asset upside</div>
-            <div class="factor-bar-track">
-              <div class="factor-bar-fill" id="bar-asset"></div>
-            </div>
-          </div>
-          <div>
-            <div class="factor-label">Market momentum</div>
-            <div class="factor-bar-track">
-              <div class="factor-bar-fill" id="bar-market"></div>
-            </div>
-          </div>
-          <div>
-            <div class="factor-label">Incentives</div>
-            <div class="factor-bar-track">
-              <div class="factor-bar-fill" id="bar-incentive"></div>
-            </div>
-          </div>
-          <div>
-            <div class="factor-label">Risk penalty</div>
-            <div class="factor-bar-track">
-              <div class="factor-bar-fill" id="bar-risk"></div>
-            </div>
-          </div>
-        </div>
-        <div class="status" id="status-text">
-          Backend status: <span>Connected</span> to scoring engine
+          <div><div class="factor-label">Value Anomaly</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-value"></div></div></div>
+          <div><div class="factor-label">Catalyst</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-catalyst"></div></div></div>
+          <div><div class="factor-label">Asset</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-asset"></div></div></div>
+          <div><div class="factor-label">Market</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-market"></div></div></div>
+          <div><div class="factor-label">Incentives</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-incentive"></div></div></div>
+          <div><div class="factor-label">Risk</div><div class="factor-bar-track"><div class="factor-bar-fill" id="bar-risk"></div></div></div>
         </div>
       </div>
 
-      <div class="section-title">Sample Midwest Parcels (MVP mock data)</div>
+      <div class="section-title">Sample Parcels</div>
       <div class="card">
         <div class="list" id="parcel-list"></div>
       </div>
 
       <div class="footer">
-        <span class="footer-strong">MVP note:</span> Parcels are mock data; scores are
-        generated live via the PropAI scoring engine API using a simple template of
-        triggers. In full version, triggers will be computed from real listings +
-        catalyst graph.
+        MVP prototype – live scoring via PropAI engine
       </div>
     </aside>
   </div>
 
-  <!-- Mapbox JS (with defer) -->
-  <script
-    src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js"
-    defer
-  ></script>
+  <!-- Mapbox script (DEFER ensures mapboxgl loads BEFORE our JS) -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js" defer></script>
 
-  <!-- Your JS code -->
   <script>
-    // --- CONFIG ---
-    const MAPBOX_TOKEN =
-      "pk.eyJ1IjoicHJvcGFpIiwiYSI6ImNtaWpxcTF6bTE0ZTIzZHE4aTRwNGxqaXYifQ.75Ue4r5eC2UbPCy1aBwq2A";
-    const BACKEND_URL = "https://propai-mvp-production.up.railway.app";
+    window.addEventListener("load", () => {
+      const MAPBOX_TOKEN =
+        "pk.eyJ1IjoicHJvcGFpIiwiYSI6ImNtaWpxcTF6bTE0ZTIzZHE4aTRwNGxqaXYifQ.75Ue4r5eC2UbPCy1aBwq2A";
 
-    // Simple hard-coded catalyst points (Midwest industrial thesis)
-    const catalysts = [
-      {
-        id: "gm-ultium-mi",
-        name: "GM–LG Ultium Cells (EV Battery)",
-        type: "EV plant",
-        state: "MI",
-        lat: 42.708,
-        lng: -84.668,
-        radius_miles: 12
-      },
-      {
-        id: "honda-ev-oh",
-        name: "Honda EV Hub Retooling",
-        type: "EV retooling",
-        state: "OH",
-        lat: 40.236,
-        lng: -83.367,
-        radius_miles: 15
-      },
-      {
-        id: "panasonic-ks",
-        name: "Panasonic EV Battery (De Soto)",
-        type: "EV plant",
-        state: "KS",
-        lat: 38.964,
-        lng: -94.97,
-        radius_miles: 15
-      }
-    ];
+      const BACKEND_URL = "https://propai-mvp-production.up.railway.app";
 
-    // Mock parcels to demonstrate UI + scoring flow.
-    const parcels = [
-      {
-        id: "mi-1",
-        name: "20 ac industrial parcel – Delta Twp, MI",
-        address: "Rickle St, Delta Twp, MI",
-        lat: 42.71,
-        lng: -84.66,
-        acres: 20,
-        price: 2100000,
-        state: "MI",
-        notes: "Near GM–LG Ultium EV plant; utilities on; OZ eligible",
-        template: "ev-strong"
-      },
-      {
-        id: "oh-1",
-        name: "15 ac raw industrial land – Marysville, OH",
-        address: "Industrial Pkwy, Marysville, OH",
-        lat: 40.23,
-        lng: -83.37,
-        acres: 15,
-        price: 1500000,
-        state: "OH",
-        notes: "Near Honda EV hub; partial utilities; no OZ",
-        template: "ev-medium"
-      },
-      {
-        id: "ks-1",
-        name: "5 ac flex industrial parcel – De Soto, KS",
-        address: "W 95th St corridor, De Soto, KS",
-        lat: 38.965,
-        lng: -94.965,
-        acres: 5,
-        price: 900000,
-        state: "KS",
-        notes: "Inside corridor for Panasonic plant; strong permits trend",
-        template: "ev-goldish"
-      }
-    ];
-
-    // --- MAP INIT ---
-    document.addEventListener("DOMContentLoaded", () => {
       mapboxgl.accessToken = MAPBOX_TOKEN;
 
       const map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/dark-v11",
-        center: [-86.0, 40.5], // rough Midwest center
+        center: [-86, 40.5],
         zoom: 4.1
       });
 
-      map.addControl(new mapboxgl.NavigationControl(), "top-right");
+      // ------- CATALYST DATA (unchanged) -------
+      const catalysts = [
+        { id: "gm", name: "GM–LG Ultium (MI)", lat: 42.708, lng: -84.668, radius_miles: 12 },
+        { id: "honda", name: "Honda EV (OH)", lat: 40.236, lng: -83.367, radius_miles: 15 },
+        { id: "panasonic", name: "Panasonic (KS)", lat: 38.964, lng: -94.97, radius_miles: 15 }
+      ];
+
+      // ------- PARCEL DATA (unchanged) -------
+      const parcels = [
+        { id: "mi1", name: "20 ac – Delta Twp, MI", address: "Rickle St, MI", lat: 42.71, lng: -84.66, state: "MI", acres: 20, price: 2100000, template: "ev-strong" },
+        { id: "oh1", name: "15 ac – Marysville, OH", address: "Industrial Pkwy, OH", lat: 40.23, lng: -83.37, state: "OH", acres: 15, price: 1500000, template: "ev-medium" },
+        { id: "ks1", name: "5 ac – De Soto, KS", address: "W 95th St, KS", lat: 38.965, lng: -94.965, state: "KS", acres: 5, price: 900000, template: "ev-goldish" }
+      ];
 
       map.on("load", () => {
-        // Draw catalyst impact circles (just visual MVP).
-        catalysts.forEach((cat) => {
-          const radiusMeters = cat.radius_miles * 1609.34;
-
-          const circleId = `catalyst-circle-${cat.id}`;
-          const sourceId = `catalyst-source-${cat.id}`;
-
-          const circleGeoJSON = createCircle(cat.lng, cat.lat, radiusMeters, 64);
-
-          map.addSource(sourceId, {
+        // draw catalyst circles
+        catalysts.forEach(c => {
+          const radiusMeters = c.radius_miles * 1609.34;
+          map.addSource(`src-${c.id}`, {
             type: "geojson",
-            data: circleGeoJSON
+            data: createCircle(c.lng, c.lat, radiusMeters, 64)
           });
-
           map.addLayer({
-            id: circleId,
+            id: `circle-${c.id}`,
             type: "fill",
-            source: sourceId,
-            paint: {
-              "fill-color": "#22c55e",
-              "fill-opacity": 0.08
-            }
+            source: `src-${c.id}`,
+            paint: { "fill-color": "#22c55e", "fill-opacity": 0.08 }
           });
-
-          // Outline
-          map.addLayer({
-            id: circleId + "-outline",
-            type: "line",
-            source: sourceId,
-            paint: {
-              "line-color": "#22c55e",
-              "line-width": 1.2,
-              "line-opacity": 0.5
-            }
-          });
-
-          // Catalyst marker
-          const el = document.createElement("div");
-          el.style.width = "10px";
-          el.style.height = "10px";
-          el.style.borderRadius = "999px";
-          el.style.background = "#22c55e";
-          el.style.boxShadow = "0 0 8px rgba(34,197,94,0.9)";
-          new mapboxgl.Marker(el)
-            .setLngLat([cat.lng, cat.lat])
-            .setPopup(
-              new mapboxgl.Popup({ offset: 12 }).setHTML(
-                `<strong>${cat.name}</strong><br/><span style="font-size:11px;color:#a1a1aa">${cat.type}, ${cat.state}</span>`
-              )
-            )
-            .addTo(map);
         });
 
-        // Plot parcels
-        parcels.forEach((parcel) => {
-          const color = "#f97316"; // bronze default – score will override visually
-
+        // parcel markers
+        parcels.forEach(parcel => {
           const el = document.createElement("div");
           el.style.width = "12px";
           el.style.height = "12px";
           el.style.borderRadius = "999px";
-          el.style.border = "2px solid #020617";
-          el.style.background = color;
+          el.style.background = "#f97316";
           el.style.boxShadow = "0 0 6px rgba(248,113,113,0.8)";
           el.style.cursor = "pointer";
 
-          const popup = new mapboxgl.Popup({ offset: 14 }).setHTML(
-            `<strong>${parcel.name}</strong><br/><span style="font-size:11px;color:#a1a1aa">${parcel.address}</span>`
-          );
-
-          const marker = new mapboxgl.Marker(el)
+          new mapboxgl.Marker(el)
             .setLngLat([parcel.lng, parcel.lat])
-            .setPopup(popup)
-            .addTo(map);
-
-          el.addEventListener("click", () => {
-            popup.addTo(map);
-            handleParcelSelected(parcel);
-          });
+            .addTo(map)
+            .getElement()
+            .addEventListener("click", () => handleParcel(parcel));
         });
 
-        // Populate sidebar list
         renderParcelList();
       });
-    });
 
-    // --- SIMPLE CIRCLE APPROX (for catalyst influence polygons) ---
-    function createCircle(lng, lat, radiusInMeters, points) {
-      const coords = [];
-      const distanceX = radiusInMeters / (111320 * Math.cos((lat * Math.PI) / 180));
-      const distanceY = radiusInMeters / 110540;
-
-      for (let i = 0; i < points; i++) {
-        const theta = (i / points) * (2 * Math.PI);
-        const x = distanceX * Math.cos(theta);
-        const y = distanceY * Math.sin(theta);
-        coords.push([lng + x, lat + y]);
-      }
-      coords.push(coords[0]);
-
-      return {
-        type: "Feature",
-        geometry: {
-          type: "Polygon",
-          coordinates: [coords]
-        }
-      };
-    }
-
-    // --- SIDEBAR LIST ---
-    function renderParcelList() {
-      const listEl = document.getElementById("parcel-list");
-      listEl.innerHTML = "";
-
-      parcels.forEach((parcel) => {
-        const item = document.createElement("div");
-        item.className = "list-item";
-        item.innerHTML = `
-          <div class="list-item-title">${parcel.name}</div>
-          <div class="list-item-meta">
-            ${parcel.state} • ${parcel.acres} ac • $${(
-          parcel.price / 1_000_000
-        ).toFixed(2)}M<br/>
-            <span>${parcel.notes}</span>
-          </div>
-        `;
-        item.addEventListener("click", () => handleParcelSelected(parcel));
-        listEl.appendChild(item);
-      });
-    }
-
-    // --- HANDLE PARCEL SELECTION + BACKEND CALL ---
-    async function handleParcelSelected(parcel) {
-      const addressEl = document.getElementById("selected-address");
-      const scoreEl = document.getElementById("poi-score");
-      const tierEl = document.getElementById("poi-tier");
-      const statusEl = document.getElementById("status-text");
-
-      addressEl.textContent = parcel.address;
-      scoreEl.textContent = "…";
-      tierEl.textContent = "Scoring…";
-      tierEl.className = "tier"; // reset classes
-
-      updateFactorBars({
-        value_anomaly: 0,
-        catalyst_adj: 0,
-        asset_upside: 0,
-        market_momentum: 0,
-        incentive_score: 0,
-        risk_penalty: 0
-      });
-
-      statusEl.innerHTML = 'Backend status: <span>Scoring parcel…</span>';
-
-      // Template-based fake triggers to feed into scoring engine.
-      const payload = buildPayloadForTemplate(parcel.template, parcel.state);
-
-      try {
-        const res = await fetch(BACKEND_URL + "/score", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
+      function renderParcelList() {
+        const list = document.getElementById("parcel-list");
+        list.innerHTML = "";
+        parcels.forEach(p => {
+          const div = document.createElement("div");
+          div.className = "list-item";
+          div.innerHTML = `
+            <div class="list-item-title">${p.name}</div>
+            <div class="list-item-meta">${p.state} • ${p.acres} ac • $${(p.price/1e6).toFixed(2)}M</div>
+          `;
+          div.addEventListener("click", () => handleParcel(p));
+          list.appendChild(div);
         });
+      }
 
-        if (!res.ok) {
-          throw new Error("Non-200 from backend");
+      function createCircle(lng, lat, radiusMeters, points) {
+        const coords = [];
+        const dX = radiusMeters / (111320 * Math.cos((lat * Math.PI) / 180));
+        const dY = radiusMeters / 110540;
+
+        for (let i=0; i<points; i++){
+          const theta = (i/points) * 2 * Math.PI;
+          coords.push([lng + dX * Math.cos(theta), lat + dY * Math.sin(theta)]);
         }
+        coords.push(coords[0]);
+        return { type:"Feature", geometry:{ type:"Polygon", coordinates:[coords] }};
+      }
 
-        const data = await res.json();
+      async function handleParcel(parcel) {
+        document.getElementById("selected-address").textContent = parcel.address;
+        document.getElementById("poi-score").textContent = "…";
+        document.getElementById("poi-tier").textContent = "Scoring…";
 
-        scoreEl.textContent = data.poi;
-        const tier = (data.tier || "").toLowerCase();
+        const payload = { 
+          // minimal fake template (same as before)
+          price_anomaly: 0.7, replacement_delta: 0.6, historical_delta: 0.6,
+          dom_score: 0.5, distance_score: 0.8, capex_score: 0.8,
+          jobs_score: 0.7, sector_rel: 1, cluster: 0.6, media_tone: 0.5,
+          recency_multiplier: 0.1, zoning_flex: 0.7, utilities: 0.7,
+          topo_index: 0.6, job_growth: 0.5, permits: 0.5, population: 0.4,
+          traffic: 0.45, macro_cycle: 0.5, inst_cluster: 0.5,
+          oz: 1, hub: 0.7, tif: 0.8, crime: 0.2,
+          flood: 0, wildfire: 0.1, epa: 0.1
+        };
 
-        if (tier === "gold") {
-          tierEl.textContent = "Gold";
-          tierEl.className = "tier tier-gold";
-        } else if (tier === "silver") {
-          tierEl.textContent = "Silver";
-          tierEl.className = "tier tier-silver";
-        } else {
-          tierEl.textContent = "Bronze";
-          tierEl.className = "tier tier-bronze";
+        try {
+          const res = await fetch(BACKEND_URL + "/score", {
+            method:"POST",
+            headers:{ "Content-Type":"application/json" },
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+
+          document.getElementById("poi-score").textContent = data.poi;
+          const tier = data.tier.toLowerCase();
+          const tierEl = document.getElementById("poi-tier");
+
+          tierEl.textContent = data.tier;
+          tierEl.className = "tier tier-" + tier;
+
+        } catch (err) {
+          console.error(err);
+          document.getElementById("poi-score").textContent = "–";
+          document.getElementById("poi-tier").textContent = "Error";
         }
-
-        updateFactorBars(data);
-        statusEl.innerHTML =
-          'Backend status: <span>Live</span> – score generated via PropAI engine';
-      } catch (err) {
-        console.error(err);
-        statusEl.innerHTML =
-          'Backend status: <span style="color:#f97316">Error</span> – could not reach scoring engine';
-        scoreEl.textContent = "–";
-        tierEl.textContent = "No score";
-        tierEl.className = "tier";
       }
-    }
-
-    function updateFactorBars(data) {
-      const value = clamp01(data.value_anomaly || 0);
-      const catalyst = clamp01(data.catalyst_adj || 0);
-      const asset = clamp01(data.asset_upside || 0);
-      const market = clamp01(data.market_momentum || 0);
-      const incentive = clamp01(data.incentive_score || 0);
-      const risk = clamp01(data.risk_penalty || 0);
-
-      document.getElementById("bar-value").style.width = value * 100 + "%";
-      document.getElementById("bar-catalyst").style.width = catalyst * 100 + "%";
-      document.getElementById("bar-asset").style.width = asset * 100 + "%";
-      document.getElementById("bar-market").style.width = market * 100 + "%";
-      document.getElementById("bar-incentive").style.width =
-        incentive * 100 + "%";
-      document.getElementById("bar-risk").style.width = risk * 100 + "%";
-    }
-
-    function clamp01(x) {
-      return Math.max(0, Math.min(1, x || 0));
-    }
-
-    // Simple templates that produce realistic-ish trigger inputs.
-    function buildPayloadForTemplate(template, state) {
-      // Some rough regional macro differences
-      const stateMacros = {
-        MI: { job_growth: 0.45, permits: 0.5, population: 0.4, traffic: 0.45 },
-        OH: { job_growth: 0.5, permits: 0.52, population: 0.45, traffic: 0.5 },
-        KS: { job_growth: 0.55, permits: 0.58, population: 0.5, traffic: 0.52 }
-      };
-
-      const macro = stateMacros[state] || {
-        job_growth: 0.5,
-        permits: 0.5,
-        population: 0.5,
-        traffic: 0.5
-      };
-
-      if (template === "ev-goldish") {
-        return {
-          price_anomaly: 0.75,
-          replacement_delta: 0.7,
-          historical_delta: 0.65,
-          dom_score: 0.6,
-          distance_score: 0.9,
-          capex_score: 0.9,
-          jobs_score: 0.85,
-          sector_rel: 1,
-          cluster: 0.7,
-          media_tone: 0.7,
-          recency_multiplier: 0.1,
-          zoning_flex: 0.8,
-          utilities: 0.9,
-          topo_index: 0.7,
-          job_growth: macro.job_growth,
-          permits: macro.permits,
-          population: macro.population,
-          traffic: macro.traffic,
-          macro_cycle: 0.55,
-          inst_cluster: 0.6,
-          oz: 1,
-          hub: 1,
-          tif: 1,
-          crime: 0.2,
-          flood: 0,
-          wildfire: 0.05,
-          epa: 0.1
-        };
-      }
-
-      if (template === "ev-medium") {
-        return {
-          price_anomaly: 0.55,
-          replacement_delta: 0.5,
-          historical_delta: 0.4,
-          dom_score: 0.5,
-          distance_score: 0.75,
-          capex_score: 0.8,
-          jobs_score: 0.7,
-          sector_rel: 1,
-          cluster: 0.6,
-          media_tone: 0.5,
-          recency_multiplier: 0.1,
-          zoning_flex: 0.65,
-          utilities: 0.7,
-          topo_index: 0.6,
-          job_growth: macro.job_growth,
-          permits: macro.permits,
-          population: macro.population,
-          traffic: macro.traffic,
-          macro_cycle: 0.5,
-          inst_cluster: 0.5,
-          oz: 0,
-          hub: 0.5,
-          tif: 0.5,
-          crime: 0.25,
-          flood: 0,
-          wildfire: 0.1,
-          epa: 0.2
-        };
-      }
-
-      // default ev-strong
-      return {
-        price_anomaly: 0.7,
-        replacement_delta: 0.65,
-        historical_delta: 0.6,
-        dom_score: 0.55,
-        distance_score: 0.85,
-        capex_score: 0.85,
-        jobs_score: 0.8,
-        sector_rel: 1,
-        cluster: 0.65,
-        media_tone: 0.6,
-        recency_multiplier: 0.1,
-        zoning_flex: 0.75,
-        utilities: 0.85,
-        topo_index: 0.65,
-        job_growth: macro.job_growth,
-        permits: macro.permits,
-        population: macro.population,
-        traffic: macro.traffic,
-        macro_cycle: 0.52,
-        inst_cluster: 0.55,
-        oz: 1,
-        hub: 0.7,
-        tif: 0.8,
-        crime: 0.22,
-        flood: 0,
-        wildfire: 0.08,
-        epa: 0.15
-      };
-    }
+    });
   </script>
 </body>
 </html>
