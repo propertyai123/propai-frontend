@@ -5,9 +5,9 @@
   <title>PropAI – Opportunity Map MVP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Mapbox CSS -->
+  <!-- Mapbox CSS (via UNPKG to bypass ORB + ISP blocks) -->
   <link
-    href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css"
+    href="https://unpkg.com/mapbox-gl@2.16.1/dist/mapbox-gl.css"
     rel="stylesheet"
   />
 
@@ -120,7 +120,8 @@
     .factor-bar-track { background: #18181b; height: 4px; width: 100%; border-radius: 999px; }
 
     .factor-bar-fill {
-      height: 100%; border-radius: 999px;
+      height: 100%;
+      border-radius: 999px;
       background: linear-gradient(90deg, #22c55e, #fbbf24);
       width: 0%;
       transition: width 0.3s ease-out;
@@ -190,8 +191,8 @@
     </aside>
   </div>
 
-  <!-- Mapbox script (DEFER ensures mapboxgl loads BEFORE our JS) -->
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js" defer></script>
+  <!-- Mapbox JS (via UNPKG to bypass ORB and firewall issues) -->
+  <script src="https://unpkg.com/mapbox-gl@2.16.1/dist/mapbox-gl.js" defer></script>
 
   <script>
     window.addEventListener("load", () => {
@@ -209,14 +210,14 @@
         zoom: 4.1
       });
 
-      // ------- CATALYST DATA (unchanged) -------
+      // ------- CATALYST DATA -------
       const catalysts = [
         { id: "gm", name: "GM–LG Ultium (MI)", lat: 42.708, lng: -84.668, radius_miles: 12 },
         { id: "honda", name: "Honda EV (OH)", lat: 40.236, lng: -83.367, radius_miles: 15 },
         { id: "panasonic", name: "Panasonic (KS)", lat: 38.964, lng: -94.97, radius_miles: 15 }
       ];
 
-      // ------- PARCEL DATA (unchanged) -------
+      // ------- PARCEL DATA -------
       const parcels = [
         { id: "mi1", name: "20 ac – Delta Twp, MI", address: "Rickle St, MI", lat: 42.71, lng: -84.66, state: "MI", acres: 20, price: 2100000, template: "ev-strong" },
         { id: "oh1", name: "15 ac – Marysville, OH", address: "Industrial Pkwy, OH", lat: 40.23, lng: -83.37, state: "OH", acres: 15, price: 1500000, template: "ev-medium" },
@@ -293,7 +294,6 @@
         document.getElementById("poi-tier").textContent = "Scoring…";
 
         const payload = { 
-          // minimal fake template (same as before)
           price_anomaly: 0.7, replacement_delta: 0.6, historical_delta: 0.6,
           dom_score: 0.5, distance_score: 0.8, capex_score: 0.8,
           jobs_score: 0.7, sector_rel: 1, cluster: 0.6, media_tone: 0.5,
