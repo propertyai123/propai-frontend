@@ -5,11 +5,8 @@
   <title>PropAI – Opportunity Map MVP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Mapbox CSS (via UNPKG to bypass ORB + ISP blocks) -->
-  <link
-    href="https://unpkg.com/mapbox-gl@2.16.1/dist/mapbox-gl.css"
-    rel="stylesheet"
-  />
+  <!-- Self-hosted Mapbox GL CSS -->
+  <link rel="stylesheet" href="/lib/mapbox-gl.css" />
 
   <style>
     * {
@@ -191,8 +188,8 @@
     </aside>
   </div>
 
-  <!-- Mapbox JS (via UNPKG to bypass ORB and firewall issues) -->
-  <script src="https://unpkg.com/mapbox-gl@2.16.1/dist/mapbox-gl.js" defer></script>
+  <!-- Self-hosted Mapbox GL JS -->
+  <script src="/lib/mapbox-gl.js" defer></script>
 
   <script>
     window.addEventListener("load", () => {
@@ -202,6 +199,9 @@
       const BACKEND_URL = "https://propai-mvp-production.up.railway.app";
 
       mapboxgl.accessToken = MAPBOX_TOKEN;
+
+      // ➤ Tell Mapbox where the worker is (self-hosted)
+      mapboxgl.workerUrl = "/lib/mapbox-gl-worker.js";
 
       const map = new mapboxgl.Map({
         container: "map",
